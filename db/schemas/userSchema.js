@@ -6,7 +6,7 @@ const userSchema = mongoose.Schema({
     email: { required: true, type: String },
     password: { required: true, type: String },
     dob: { required: true, type: Date },
-    createdOn: { default: new Date.now, required: true, type: Date },
+    createdOn: { default: Date.now, required: true, type: Date },
     avatar: { required: true, type: String },
     geoScore: { default: 0, required: true, type: Number },
     communities: [String],

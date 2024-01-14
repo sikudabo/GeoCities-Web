@@ -6,6 +6,10 @@ const bodyParser = require('body-parser');
 const logger = require('morgan');
 const errorHandler = require('errorhandler');
 const cors = require('cors');
+const { startDb } = require('./db');
+const {
+    UserSignUp
+} = require('./api/routes');
 
 app.set('port', process.env.PORT || 2000);
 app.set('appName', 'GeoCities');
@@ -16,6 +20,12 @@ app.use(errorHandler());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
+
+// Routes 
+app.use(UserSignUp);
+
+// Create database connection
+startDb();
 
 // Create the server 
 const server = http.createServer(app);
