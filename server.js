@@ -8,6 +8,7 @@ const errorHandler = require('errorhandler');
 const cors = require('cors');
 const { startDb } = require('./db');
 const {
+    GetUser,
     UserLogin,
     UserSignUp
 } = require('./api/routes');
@@ -23,6 +24,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 
 // Routes 
+app.use(GetUser);
 app.use(UserLogin);
 app.use(UserSignUp);
 
