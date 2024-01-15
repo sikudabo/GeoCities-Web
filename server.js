@@ -8,6 +8,7 @@ const errorHandler = require('errorhandler');
 const cors = require('cors');
 const { startDb } = require('./db');
 const {
+    UserLogin,
     UserSignUp
 } = require('./api/routes');
 
@@ -22,6 +23,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 
 // Routes 
+app.use(UserLogin);
 app.use(UserSignUp);
 
 // Create database connection
