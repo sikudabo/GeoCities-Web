@@ -36,11 +36,12 @@ const storage = new GridFsStorage({
 
 const uploads = multer({ storage });
 
-router.route('/api/user-signup').post(uploads.single('avatar'), async (req, res) => {
+router.route('/api/user-signup').put(uploads.single('avatar'), async (req, res) => {
     const {
         firstName, 
         lastName,
         email, 
+        fbId,
         password,
         dob,
         locationCity,
@@ -50,9 +51,15 @@ router.route('/api/user-signup').post(uploads.single('avatar'), async (req, res)
 
     try {
         const emailExists = await UserModel.findOne({ email });
+        const fbIdExists = await UserModel.findOne({ fbId });
 
         if (emailExists) {
-            res.status(403).json({ isEmailTaken: true, message: 'That email is already taken! Please select another.' });
+            res.status(200).json({ isError: true, message: 'That email is already taken! Please select another.' });
+            return;
+        }
+
+        if (fbIdExists) {
+            res.status(200).json({ isError: true, message: 'Someone with that Facebook account already created a GeoCities account. Place login to another Facebook account.'});
             return;
         }
 
@@ -60,6 +67,7 @@ router.route('/api/user-signup').post(uploads.single('avatar'), async (req, res)
             firstName,
             lastName,
             email,
+            fbId,
             password,
             dob,
             avatar,
