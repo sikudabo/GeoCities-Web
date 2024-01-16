@@ -9,6 +9,7 @@ const cors = require('cors');
 const { startDb } = require('./db');
 const {
     GetPhoto,
+    GetPhotoByUserId,
     GetUser,
     UserLogin,
     UserSignUp
@@ -26,6 +27,7 @@ app.use(cors());
 
 // Routes 
 app.use(GetPhoto);
+app.use(GetPhotoByUserId);
 app.use(GetUser);
 app.use(UserLogin);
 app.use(UserSignUp);
