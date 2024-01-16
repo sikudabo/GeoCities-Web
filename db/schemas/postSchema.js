@@ -8,17 +8,18 @@ const postSchema = mongoose.Schema({
     postType: { required: true, type: String },
     communityName: String,
     caption: String,
-    likes: [String],
+    likes: { default: [], type: [String]},
     postMediaId: String,
-    hashTags: [String],
+    link: String,
+    hashTags: { default: [], type: [String] },
     comments: [
         mongoose.Schema({
-            author: { required: true, type: String },
+            authorId: { required: true, type: String },
             userName: { required: true, type: String },
             createdAt: { required: true, type: Date },
             caption: { required: true, type: String },
             postAuthorId: { required: true, type: String },
-            hashTags: [String],
+            hashTags: { default: [], type: [String] },
         })
     ],
 }, {
