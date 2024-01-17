@@ -3,15 +3,16 @@ const router = express.Router();
 const { PostModel } = require('../../db/models');
 
 router.route('/api/upload-link-text').put(async (req, res) => {
-    console.log('The response is:', res);
     const { authorId, caption, communityName, createdAt, link, postType, postOriginType, userName } = req.body;
-    let hashtags = [];
+    let hashTags = [];
 
     if (caption) {
         const splitCaption = caption.split(' ');
         splitCaption.forEach((caption) => {
+            console.log('The caption is:', caption);
             if (caption.startsWith('#')) {
-                hashtags.push(caption);
+                let currentCaption = caption;
+                hashTags.push(currentCaption.replace(/[^A-Za-z0-9]/g, ''));
             }
         });
     }
@@ -22,7 +23,7 @@ router.route('/api/upload-link-text').put(async (req, res) => {
                 authorId,
                 caption,
                 createdAt: Number(createdAt),
-                hashtags,
+                hashTags,
                 postType,
                 postOriginType,
                 userName,
