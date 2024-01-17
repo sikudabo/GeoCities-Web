@@ -55,7 +55,7 @@ router.route('/api/upload-video-photo').put(uploads.single('postMedia'), async (
             const newPost = new PostModel({
                 authorId,
                 caption,
-                createdAt,
+                createdAt: Number(createdAt),
                 hashtags,
                 postType,
                 postMediaId,

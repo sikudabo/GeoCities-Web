@@ -20,7 +20,7 @@ router.route('/api/upload-link-text').put(async (req, res) => {
             const newPost = new PostModel({
                 authorId,
                 caption,
-                createdAt,
+                createdAt: Number(createdAt),
                 hashtags,
                 postType,
                 postOriginType,

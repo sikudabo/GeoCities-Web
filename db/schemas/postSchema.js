@@ -4,7 +4,7 @@ const postSchema = mongoose.Schema({
     authorId: { required: true, type: String },
     userName: { required: true, type: String },
     postOriginType: { required: true, type: String },
-    createdAt: { required: true, type: Date },
+    createdAt: { required: true, type: Number },
     postType: { required: true, type: String },
     communityName: String,
     caption: String,
