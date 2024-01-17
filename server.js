@@ -11,6 +11,7 @@ const {
     GetPhoto,
     GetPhotoByUserId,
     GetUser,
+    UploadNonBinaryPost,
     UserLogin,
     UserSignUp
 } = require('./api/routes');
@@ -29,6 +30,7 @@ app.use(cors());
 app.use(GetPhoto);
 app.use(GetPhotoByUserId);
 app.use(GetUser);
+app.use(UploadNonBinaryPost);
 app.use(UserLogin);
 app.use(UserSignUp);
 
