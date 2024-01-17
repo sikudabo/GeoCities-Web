@@ -5,8 +5,8 @@ const GridFsStorage = require('multer-gridfs-storage');
 const mongoose = require('mongoose');
 const multer = require('multer');
 const path = require('path');
-const { UserModel } = require('../../db/models');
 const dotenv = require('dotenv').config();
+const { UserModel } = require('../../db/models');
 
 const dbUri = dotenv.parsed.DB_URI;
 var conn = mongoose.createConnection(dbUri, { useNewUrlParser: true, useUnifiedTopology: true });

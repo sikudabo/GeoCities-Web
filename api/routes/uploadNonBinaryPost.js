@@ -3,7 +3,7 @@ const router = express.Router();
 const { PostModel } = require('../../db/models');
 
 router.route('/api/upload-link-text').put(async (req, res) => {
-    const { authorId, caption, communityName, createdAt, link, postType, postOriginType, userName, } = req.body;
+    const { authorId, caption, communityName, createdAt, link, postType, postOriginType, userName } = req.body;
 
     try {
         if (postType === 'text' && postOriginType === 'profile') {

@@ -11,6 +11,7 @@ const {
     GetPhoto,
     GetPhotoByUserId,
     GetUser,
+    UploadBinaryPost,
     UploadNonBinaryPost,
     UserLogin,
     UserSignUp
@@ -30,6 +31,7 @@ app.use(cors());
 app.use(GetPhoto);
 app.use(GetPhotoByUserId);
 app.use(GetUser);
+app.use(UploadBinaryPost);
 app.use(UploadNonBinaryPost);
 app.use(UserLogin);
 app.use(UserSignUp);
