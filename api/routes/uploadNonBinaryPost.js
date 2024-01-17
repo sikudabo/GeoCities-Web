@@ -4,6 +4,16 @@ const { PostModel } = require('../../db/models');
 
 router.route('/api/upload-link-text').put(async (req, res) => {
     const { authorId, caption, communityName, createdAt, link, postType, postOriginType, userName } = req.body;
+    let hashtags = [];
+
+    if (caption) {
+        const splitCaption = caption.split(' ');
+        splitCaption.forEach((caption) => {
+            if (caption.startsWith('#')) {
+                hashtags.push(caption);
+            }
+        });
+    }
 
     try {
         if (postType === 'text' && postOriginType === 'profile') {
@@ -11,6 +21,7 @@ router.route('/api/upload-link-text').put(async (req, res) => {
                 authorId,
                 caption,
                 createdAt,
+                hashtags,
                 postType,
                 postOriginType,
                 userName,
@@ -24,6 +35,7 @@ router.route('/api/upload-link-text').put(async (req, res) => {
                 caption,
                 communityName,
                 createdAt,
+                hashtags,
                 postType,
                 postOriginType,
                 userName,
@@ -35,6 +47,7 @@ router.route('/api/upload-link-text').put(async (req, res) => {
                 authorId,
                 caption,
                 createdAt,
+                hashtags,
                 link,
                 postType,
                 postOriginType,
@@ -48,6 +61,7 @@ router.route('/api/upload-link-text').put(async (req, res) => {
                 caption,
                 communityName,
                 createdAt,
+                hashtags,
                 link,
                 postType,
                 postOriginType,

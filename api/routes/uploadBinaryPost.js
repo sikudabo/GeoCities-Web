@@ -39,6 +39,16 @@ const uploads = multer({ storage });
 router.route('/api/upload-video-photo').put(uploads.single('postMedia'), async (req, res) => {
     const { authorId, caption, communityName, createdAt, link, postType, postOriginType, userName } = req.body;
     const postMediaId = req.file.filename;
+    let hashtags = [];
+
+    if (caption) {
+        const splitCaption = caption.split(' ');
+        splitCaption.forEach((caption) => {
+            if (caption.startsWith('#')) {
+                hashtags.push(caption);
+            }
+        });
+    }
 
     try {
         if (postOriginType === 'profile') {
@@ -46,6 +56,7 @@ router.route('/api/upload-video-photo').put(uploads.single('postMedia'), async (
                 authorId,
                 caption,
                 createdAt,
+                hashtags,
                 postType,
                 postMediaId,
                 postOriginType,
@@ -62,6 +73,7 @@ router.route('/api/upload-video-photo').put(uploads.single('postMedia'), async (
             caption,
             createdAt,
             communityName,
+            hashtags,
             link,
             postType,
             postMediaId,
