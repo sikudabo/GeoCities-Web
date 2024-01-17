@@ -10,6 +10,7 @@ const { startDb } = require('./db');
 const {
     GetPhoto,
     GetPhotoByUserId,
+    GetProfilePosts,
     GetUser,
     UploadBinaryPost,
     UploadNonBinaryPost,
@@ -30,6 +31,7 @@ app.use(cors());
 // Routes 
 app.use(GetPhoto);
 app.use(GetPhotoByUserId);
+app.use(GetProfilePosts);
 app.use(GetUser);
 app.use(UploadBinaryPost);
 app.use(UploadNonBinaryPost);
