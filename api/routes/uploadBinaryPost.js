@@ -39,13 +39,15 @@ const uploads = multer({ storage });
 router.route('/api/upload-video-photo').put(uploads.single('postMedia'), async (req, res) => {
     const { authorId, caption, communityName, createdAt, link, postType, postOriginType, userName } = req.body;
     const postMediaId = req.file.filename;
-    let hashtags = [];
+    let hashTags = [];
 
     if (caption) {
         const splitCaption = caption.split(' ');
         splitCaption.forEach((caption) => {
+            console.log('The caption is:', caption);
             if (caption.startsWith('#')) {
-                hashtags.push(caption);
+                let currentCaption = caption;
+                hashTags.push(currentCaption.replace(/[^A-Za-z0-9]/g, ''));
             }
         });
     }
@@ -56,7 +58,7 @@ router.route('/api/upload-video-photo').put(uploads.single('postMedia'), async (
                 authorId,
                 caption,
                 createdAt: Number(createdAt),
-                hashtags,
+                hashTags,
                 postType,
                 postMediaId,
                 postOriginType,
