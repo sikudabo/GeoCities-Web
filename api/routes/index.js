@@ -1,3 +1,4 @@
+const AddSubtractLike = require('./addSubtractLike');
 const GetPhoto = require('./getPhoto')
 const GetPhotoByUserId = require('./getPhotoByUserId');
 const GetProfilePosts = require('./getProfilePosts');
@@ -9,6 +10,7 @@ const UserLogin = require('./userLogin');
 const UserSignUp = require('./userSignUp');
 
 module.exports = {
+    AddSubtractLike,
     GetPhoto,
     GetPhotoByUserId,
     GetProfilePosts,

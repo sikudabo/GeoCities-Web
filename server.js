@@ -8,6 +8,7 @@ const errorHandler = require('errorhandler');
 const cors = require('cors');
 const { startDb } = require('./db');
 const {
+    AddSubtractLike,
     GetPhoto,
     GetPhotoByUserId,
     GetProfilePosts,
@@ -30,6 +31,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 
 // Routes 
+app.use(AddSubtractLike);
 app.use(GetPhoto);
 app.use(GetPhotoByUserId);
 app.use(GetProfilePosts);
