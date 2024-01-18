@@ -59,6 +59,7 @@ router.route('/api/upload-video-photo').put(uploads.single('postMedia'), async (
                 caption,
                 createdAt: Number(createdAt),
                 hashTags,
+                link,
                 postType,
                 postMediaId,
                 postOriginType,
