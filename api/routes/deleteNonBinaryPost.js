@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const { PostModel } = require('../../db/models');
 
-router.route('api/delete-nonbinary-post').delete(async (req, res) => {
+router.route('/api/delete-nonbinary-post').delete(async (req, res) => {
     const { postId } = req.body;
 
     try {
