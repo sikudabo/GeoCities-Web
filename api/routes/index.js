@@ -1,4 +1,5 @@
 const AddSubtractLike = require('./addSubtractLike');
+const DeleteBinaryPost = require('./deleteBinaryPost');
 const DeleteNonBinaryPost = require('./deleteNonBinaryPost');
 const GetPhoto = require('./getPhoto')
 const GetPhotoByUserId = require('./getPhotoByUserId');
@@ -12,6 +13,7 @@ const UserSignUp = require('./userSignUp');
 
 module.exports = {
     AddSubtractLike,
+    DeleteBinaryPost,
     DeleteNonBinaryPost,
     GetPhoto,
     GetPhotoByUserId,
