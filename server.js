@@ -9,6 +9,7 @@ const cors = require('cors');
 const { startDb } = require('./db');
 const {
     AddSubtractLike,
+    DeleteNonBinaryPost,
     GetPhoto,
     GetPhotoByUserId,
     GetProfilePosts,
@@ -32,6 +33,7 @@ app.use(cors());
 
 // Routes 
 app.use(AddSubtractLike);
+app.use(DeleteNonBinaryPost);
 app.use(GetPhoto);
 app.use(GetPhotoByUserId);
 app.use(GetProfilePosts);
