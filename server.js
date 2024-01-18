@@ -12,6 +12,7 @@ const {
     GetPhotoByUserId,
     GetProfilePosts,
     GetUser,
+    GetVideo,
     UploadBinaryPost,
     UploadNonBinaryPost,
     UserLogin,
@@ -33,6 +34,7 @@ app.use(GetPhoto);
 app.use(GetPhotoByUserId);
 app.use(GetProfilePosts);
 app.use(GetUser);
+app.use(GetVideo);
 app.use(UploadBinaryPost);
 app.use(UploadNonBinaryPost);
 app.use(UserLogin);
