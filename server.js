@@ -13,6 +13,7 @@ const {
     DeleteNonBinaryPost,
     GetPhoto,
     GetPhotoByUserId,
+    GetPost,
     GetProfilePosts,
     GetUser,
     GetVideo,
@@ -38,6 +39,7 @@ app.use(DeleteBinaryPost);
 app.use(DeleteNonBinaryPost);
 app.use(GetPhoto);
 app.use(GetPhotoByUserId);
+app.use(GetPost);
 app.use(GetProfilePosts);
 app.use(GetUser);
 app.use(GetVideo);
