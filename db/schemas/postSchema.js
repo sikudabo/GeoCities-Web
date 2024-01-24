@@ -17,7 +17,7 @@ const postSchema = mongoose.Schema({
             authorId: { required: true, type: String },
             commentType: { required: true, type: String },
             userName: { required: true, type: String },
-            createdAt: { required: true, type: Date },
+            createdAt: { required: true, type: Number },
             caption: { required: true, type: String },
             postAuthorId: { required: true, type: String },
             postId: { required: true, type: String },
