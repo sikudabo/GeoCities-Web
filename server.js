@@ -18,6 +18,7 @@ const {
     GetUser,
     GetVideo,
     UploadBinaryPost,
+    UploadNonBinaryComment,
     UploadNonBinaryPost,
     UserLogin,
     UserSignUp
@@ -44,6 +45,7 @@ app.use(GetProfilePosts);
 app.use(GetUser);
 app.use(GetVideo);
 app.use(UploadBinaryPost);
+app.use(UploadNonBinaryComment);
 app.use(UploadNonBinaryPost);
 app.use(UserLogin);
 app.use(UserSignUp);
