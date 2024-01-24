@@ -8,6 +8,7 @@ const errorHandler = require('errorhandler');
 const cors = require('cors');
 const { startDb } = require('./db');
 const {
+    AddSubtractCommentLike,
     AddSubtractLike,
     DeleteBinaryPost,
     DeleteNonBinaryPost,
@@ -36,6 +37,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 
 // Routes 
+app.use(AddSubtractCommentLike);
 app.use(AddSubtractLike);
 app.use(DeleteBinaryPost);
 app.use(DeleteNonBinaryPost);
