@@ -15,11 +15,16 @@ const postSchema = mongoose.Schema({
     comments: [
         mongoose.Schema({
             authorId: { required: true, type: String },
+            commentType: { required: true, type: String },
             userName: { required: true, type: String },
             createdAt: { required: true, type: Date },
             caption: { required: true, type: String },
             postAuthorId: { required: true, type: String },
+            postId: { required: true, type: String },
             hashTags: { default: [], type: [String] },
+            likes: { default: [], type: [String] },
+            postMediaId: String,
+            link: String,
         })
     ],
 }, {
