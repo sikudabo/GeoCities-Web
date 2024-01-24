@@ -72,7 +72,7 @@ router.route('/api/upload-video-photo-comment').put(uploads.single('postMedia'),
 
     } catch (e) {
         console.log(`There was an error uploading a ${postOriginType} ${postType} post: ${e.message}`);
-        res.status(500).json({ isError: true, message: 'There was an error uploading that post. Please try again!' });
+        res.status(500).json({ isError: true, message: 'There was an error uploading that comment. Please try again!' });
     }
 });
 
