@@ -7,6 +7,7 @@ const GetPost = require('./getPost');
 const GetProfilePosts = require('./getProfilePosts');
 const GetUser = require('./getUser');
 const GetVideo = require('./getVideo');
+const UploadBinaryComment = require('./uploadBinaryComment');
 const UploadBinaryPost = require('./uploadBinaryPost');
 const UploadNonBinaryComment = require('./uploadNonBinaryComment');
 const UploadNonBinaryPost = require('./uploadNonBinaryPost');
@@ -23,6 +24,7 @@ module.exports = {
     GetProfilePosts,
     GetUser,
     GetVideo,
+    UploadBinaryComment,
     UploadBinaryPost,
     UploadNonBinaryComment,
     UploadNonBinaryPost,
