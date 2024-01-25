@@ -4,6 +4,7 @@ const DeleteBinaryComment = require('./deleteBinaryComment');
 const DeleteBinaryPost = require('./deleteBinaryPost');
 const DeleteNonBinaryComment = require('./deleteNonBinaryComment');
 const DeleteNonBinaryPost = require('./deleteNonBinaryPost');
+const GetFeedPosts = require('./getFeedPosts');
 const GetPhoto = require('./getPhoto')
 const GetPhotoByUserId = require('./getPhotoByUserId');
 const GetPost = require('./getPost');
@@ -24,6 +25,7 @@ module.exports = {
     DeleteBinaryPost,
     DeleteNonBinaryComment,
     DeleteNonBinaryPost,
+    GetFeedPosts,
     GetPhoto,
     GetPhotoByUserId,
     GetPost,
