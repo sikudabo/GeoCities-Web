@@ -10,6 +10,7 @@ const { startDb } = require('./db');
 const {
     AddSubtractCommentLike,
     AddSubtractLike,
+    CreateGroup,
     DeleteBinaryComment,
     DeleteBinaryPost,
     DeleteNonBinaryComment,
@@ -42,6 +43,7 @@ app.use(cors());
 // Routes 
 app.use(AddSubtractCommentLike);
 app.use(AddSubtractLike);
+app.use(CreateGroup);
 app.use(DeleteBinaryComment);
 app.use(DeleteBinaryPost);
 app.use(DeleteNonBinaryComment);
