@@ -15,7 +15,7 @@ const userSchema = mongoose.Schema({
     followers: [String],
     following: [String],
     blockedList: [String],
-    groupsBlockList: { default: [], type: [String ] },
+    groupsBlockedFrom: { default: [], type: [String ] },
     fbId: { required: true, type: String, unique: true },
     blockedFrom: { default: [], type: [String] },
     groups: { default: [], type: [String] },
