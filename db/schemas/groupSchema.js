@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
 const groupSchema = new mongoose.Schema({
+    createdAt: { required: true, type: Number },
     groupName: { required: true, type: String, unique: true },
     description: { required: true, type: String },
     topic: { required: true, type: String },
