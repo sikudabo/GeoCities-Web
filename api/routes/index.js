@@ -1,5 +1,6 @@
 const AddSubtractCommentLike = require('./addSubtractCommentLike');
 const AddSubtractLike = require('./addSubtractLike');
+const DeleteBinaryComment = require('./deleteBinaryComment');
 const DeleteBinaryPost = require('./deleteBinaryPost');
 const DeleteNonBinaryComment = require('./deleteNonBinaryComment');
 const DeleteNonBinaryPost = require('./deleteNonBinaryPost');
@@ -19,6 +20,7 @@ const UserSignUp = require('./userSignUp');
 module.exports = {
     AddSubtractCommentLike,
     AddSubtractLike,
+    DeleteBinaryComment,
     DeleteBinaryPost,
     DeleteNonBinaryComment,
     DeleteNonBinaryPost,
