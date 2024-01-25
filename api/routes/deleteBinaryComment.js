@@ -26,9 +26,12 @@ conn.once('open', async () => {
 
 router.route('/api/delete-binary-comment').delete(async (req, res) => {
     const { commentId, fileId, postId } = req.body;
+    console.log('The postId is:', postId);
 
     try {
         await PostModel.updateOne({ _id: postId }, { $pull: { comments: { _id: commentId }}});
+        const comment = await PostModel.find({ _id: postId }, { _id: 0, comments: { $elemMatch: { _id: commentId }}});
+        console.log('The comment is:', comment);
         const { _id: id } = await gfs.files.findOne({ filename: fileId });
         await gridfsBucket.delete(id);
         res.status(200).json({ isError: false, message: 'Successfully deleted that comment.' });
