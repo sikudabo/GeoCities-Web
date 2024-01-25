@@ -11,6 +11,7 @@ const {
     AddSubtractCommentLike,
     AddSubtractLike,
     DeleteBinaryPost,
+    DeleteNonBinaryComment,
     DeleteNonBinaryPost,
     GetPhoto,
     GetPhotoByUserId,
@@ -40,6 +41,7 @@ app.use(cors());
 app.use(AddSubtractCommentLike);
 app.use(AddSubtractLike);
 app.use(DeleteBinaryPost);
+app.use(DeleteNonBinaryComment);
 app.use(DeleteNonBinaryPost);
 app.use(GetPhoto);
 app.use(GetPhotoByUserId);
