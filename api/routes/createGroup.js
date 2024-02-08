@@ -41,6 +41,14 @@ router.route('/api/create-group').put(uploads.single('avatar'), async (req, res)
     const avatar = req.file.filename;
 
     try {
+
+        const groupExists = await GroupModel.findOne({ groupName });
+
+        if (groupExists) {
+            res.status(200).json({ isError: true, message: 'That group name already exists! Please select another.' });
+            return;
+        }
+        
         const newGroup = new GroupModel({
             avatar,
             createdAt,
