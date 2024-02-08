@@ -37,12 +37,13 @@ const storage = new GridFsStorage({
 const uploads = multer({ storage });
 
 router.route('/api/create-group').put(uploads.single('avatar'), async (req, res) => {
-    const { creator, description, groupName, topic } = req.body;
+    const { createdAt, creator, description, groupName, topic } = req.body;
     const avatar = req.file.filename;
 
     try {
         const newGroup = new GroupModel({
             avatar,
+            createdAt,
             creator,
             description,
             groupName,
