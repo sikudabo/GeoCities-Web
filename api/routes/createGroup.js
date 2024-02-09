@@ -48,7 +48,7 @@ router.route('/api/create-group').put(uploads.single('avatar'), async (req, res)
             res.status(200).json({ isError: true, message: 'That group name already exists! Please select another.' });
             return;
         }
-        
+
         const newGroup = new GroupModel({
             avatar,
             createdAt,
@@ -63,7 +63,7 @@ router.route('/api/create-group').put(uploads.single('avatar'), async (req, res)
         const group = await newGroup.save();
         const { _id } = group;
         await UserModel.updateOne({ _id: creator }, { $push: { groups: _id } });
-        res.status(200).json({ isError: false, message: "New group created!", groupId: _id });
+        res.status(200).json({ isError: false, message: "New group created!", group });
     } catch (e) {
         console.log(`There was an error creating a new group: ${e.message}`);
         res.status(500).json({ isError: true, message: 'There was an error creating a new group!' });
