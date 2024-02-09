@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { UserModel } = require('../../db/models');
+const { GroupModel, UserModel } = require('../../db/models');
 
 router.route('/api/get-user/:_id').get(async (req, res) => {
     const { _id } = req.params;
@@ -11,6 +11,9 @@ router.route('/api/get-user/:_id').get(async (req, res) => {
             res.status(200).json({ isError: true, message: 'User not found!' });
             return;
         }
+
+        const userGroups = await GroupModel.find({ _id: { $in: fetchedUser.groups }});
+        fetchedUser.userGroups = userGroups;
 
         res.status(200).json({ isError: false, message: 'Successfully found your profile!', user: fetchedUser });
     } catch (err) {
