@@ -15,7 +15,7 @@ router.route('/api/get-user/:_id').get(async (req, res) => {
         const userGroups = await GroupModel.find({ _id: { $in: fetchedUser.groups }});
         fetchedUser.userGroups = userGroups;
 
-        res.status(200).json({ isError: false, message: 'Successfully found your profile!', user: fetchedUser });
+        res.status(200).json({ isError: false, message: 'Successfully found your profile!', userGroups, user: fetchedUser });
     } catch (err) {
         console.log('There was an error fetching a user profile in a GET request');
         res.status(500).json({ isError: true, message: 'There was an error fetching a user profile. Please try again!' });
