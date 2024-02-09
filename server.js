@@ -17,6 +17,7 @@ const {
     DeleteNonBinaryPost,
     GetFeedPosts,
     GetGroup,
+    GetGroups,
     GetPhoto,
     GetPhotoByUserId,
     GetPost,
@@ -51,6 +52,7 @@ app.use(DeleteNonBinaryComment);
 app.use(DeleteNonBinaryPost);
 app.use(GetFeedPosts);
 app.use(GetGroup);
+app.use(GetGroups);
 app.use(GetPhoto);
 app.use(GetPhotoByUserId);
 app.use(GetPost);
