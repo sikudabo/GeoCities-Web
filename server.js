@@ -8,6 +8,7 @@ const errorHandler = require('errorhandler');
 const cors = require('cors');
 const { startDb } = require('./db');
 const {
+    AddOrRemoveGroupUser,
     AddSubtractCommentLike,
     AddSubtractLike,
     CreateGroup,
@@ -43,6 +44,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 
 // Routes 
+app.use(AddOrRemoveGroupUser);
 app.use(AddSubtractCommentLike);
 app.use(AddSubtractLike);
 app.use(CreateGroup);

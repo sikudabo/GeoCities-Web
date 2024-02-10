@@ -1,3 +1,4 @@
+const AddOrRemoveGroupUser = require('./addOrRemoveGroupUser');
 const AddSubtractCommentLike = require('./addSubtractCommentLike');
 const AddSubtractLike = require('./addSubtractLike');
 const CreateGroup = require('./createGroup');
@@ -22,6 +23,7 @@ const UserLogin = require('./userLogin');
 const UserSignUp = require('./userSignUp');
 
 module.exports = {
+    AddOrRemoveGroupUser,
     AddSubtractCommentLike,
     AddSubtractLike,
     CreateGroup,
