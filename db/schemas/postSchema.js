@@ -6,7 +6,7 @@ const postSchema = mongoose.Schema({
     postOriginType: { required: true, type: String },
     createdAt: { required: true, type: Number },
     postType: { required: true, type: String },
-    communityName: String,
+    groupName: String,
     caption: String,
     likes: { default: [], type: [String]},
     postMediaId: String,
