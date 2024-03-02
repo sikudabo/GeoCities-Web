@@ -3,7 +3,7 @@ const router = express.Router();
 const { PostModel } = require('../../db/models');
 
 router.route('/api/upload-link-text').put(async (req, res) => {
-    const { authorId, caption, communityName, createdAt, link, postType, postOriginType, userName } = req.body;
+    const { authorId, caption, groupName, createdAt, link, postType, postOriginType, userName } = req.body;
     let hashTags = [];
 
     if (caption) {
@@ -35,7 +35,7 @@ router.route('/api/upload-link-text').put(async (req, res) => {
             const newPost = new PostModel({
                 authorId,
                 caption,
-                communityName,
+                groupName,
                 createdAt,
                 hashTags,
                 postType,
@@ -61,7 +61,7 @@ router.route('/api/upload-link-text').put(async (req, res) => {
             const newPost = new PostModel({
                 authorId,
                 caption,
-                communityName,
+                groupName,
                 createdAt,
                 hashTags,
                 link,
