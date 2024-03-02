@@ -2,11 +2,11 @@ const express = require('express');
 const router = express.Router();
 const { GroupModel } = require('../../db/models');
 
-router.route('/api/get-group/:_id').get(async (req, res) => {
-    const { _id } = req.params;
+router.route('/api/get-group/:groupName').get(async (req, res) => {
+    const { groupName } = req.params;
 
     try {
-        const group = await GroupModel.findOne({ _id });
+        const group = await GroupModel.findOne({ groupName });
         res.status(200).json({ isSuccess: true, group });
     }
 
