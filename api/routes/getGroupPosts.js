@@ -6,7 +6,7 @@ router.route('/api/fetch-group-posts/:groupName').get(async (req, res) => {
     const { groupName } = req.params;
 
     try {
-        const posts = PostModel.find({ groupName });
+        const posts = await PostModel.find({ groupName });
         res.status(200).json({ isError: false, message: 'Successfully fetched group posts.', posts });
     } catch(err) {
         console.log(`There was an error fetching group posts: ${err.message}`);
