@@ -37,7 +37,7 @@ const storage = new GridFsStorage({
 const uploads = multer({ storage });
 
 router.route('/api/upload-video-photo').put(uploads.single('postMedia'), async (req, res) => {
-    const { authorId, caption, communityName, createdAt, link, postType, postOriginType, userName } = req.body;
+    const { authorId, caption, groupName, createdAt, link, postType, postOriginType, userName } = req.body;
     const postMediaId = req.file.filename;
     let hashTags = [];
 
@@ -75,7 +75,7 @@ router.route('/api/upload-video-photo').put(uploads.single('postMedia'), async (
             authorId,
             caption,
             createdAt,
-            communityName,
+            groupName,
             hashTags,
             link,
             postType,
