@@ -20,7 +20,7 @@ router.route('/api/add-subtract-like-comment').post(async (req, res) => {
             await PostModel.updateOne({ _id: postId, 'comments._id': commentId }, { $pull: { 'comments.$.likes': likerId }});
 
             if (authorId !== likerId) {
-                await UserModel.updateOne({ _id: authorId }, { $desc: { geoScore : 1 }});
+                await UserModel.updateOne({ _id: authorId }, { $inc: { geoScore : -1 }});
                 res.status(200).json({ isError: false, message: 'Successfully unliked comment.' });
                 return;
             }
