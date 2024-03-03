@@ -41,7 +41,7 @@ router.route('/api/user-signup').put(uploads.single('avatar'), async (req, res) 
         firstName, 
         lastName,
         email, 
-        fbId,
+        // fbId,
         password,
         dob,
         locationCity,
@@ -51,23 +51,23 @@ router.route('/api/user-signup').put(uploads.single('avatar'), async (req, res) 
 
     try {
         const emailExists = await UserModel.findOne({ email });
-        const fbIdExists = await UserModel.findOne({ fbId });
+        // const fbIdExists = await UserModel.findOne({ fbId });
 
         if (emailExists) {
             res.status(200).json({ isError: true, message: 'That email is already taken! Please select another.' });
             return;
         }
 
-        if (fbIdExists) {
+        /* if (fbIdExists) {
             res.status(200).json({ isError: true, message: 'Someone with that Facebook account already created a GeoCities account. Place login to another Facebook account.'});
             return;
-        }
+        } */
 
         const newUser = new UserModel({
             firstName,
             lastName,
             email,
-            fbId,
+            fbId: '1',
             password,
             dob,
             avatar,
