@@ -3,7 +3,8 @@ const router = express.Router();
 const { GroupModel, UserModel } = require('../../db/models');
 
 router.route('/api/join-group').post(async (req, res) => {
-    const { groupName, _id, isLeave } = req.params;
+    const { groupName, _id, isLeave } = req.body;
+    console.log('Join group hit');
 
     try {
         if (isLeave) {
