@@ -4,6 +4,7 @@ const { GroupModel, UserModel } = require('../../db/models');
 
 router.route('/api/get-user/:_id').get(async (req, res) => {
     const { _id } = req.params;
+    console.log('The user id is:', _id);
 
     try {
         const fetchedUser = await UserModel.findOne({ _id });
