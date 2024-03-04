@@ -29,9 +29,10 @@ const {
     GetProfilePosts,
     GetUser,
     GetVideo,
-    UpdateGroup,
     UploadBinaryComment,
     UploadBinaryPost,
+    UpdateGroup,
+    UpdateGroupAvatar,
     UploadNonBinaryComment,
     UploadNonBinaryPost,
     UserLogin,
@@ -70,11 +71,12 @@ app.use(GetPost);
 app.use(GetProfilePosts);
 app.use(GetUser);
 app.use(GetVideo);
-app.use(UpdateGroup);
 app.use(UploadBinaryComment);
 app.use(UploadBinaryPost);
 app.use(UploadNonBinaryComment);
 app.use(UploadNonBinaryPost);
+app.use(UpdateGroup);
+app.use(UpdateGroupAvatar);
 app.use(UserLogin);
 app.use(UserSignUp);
 

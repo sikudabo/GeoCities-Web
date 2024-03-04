@@ -20,6 +20,7 @@ const GetProfilePosts = require('./getProfilePosts');
 const GetUser = require('./getUser');
 const GetVideo = require('./getVideo');
 const UpdateGroup = require('./updateGroup');
+const UpdateGroupAvatar = require('./updateGroupAvatar');
 const UploadBinaryComment = require('./uploadBinaryComment');
 const UploadBinaryPost = require('./uploadBinaryPost');
 const UploadNonBinaryComment = require('./uploadNonBinaryComment');
@@ -50,6 +51,7 @@ module.exports = {
     GetUser,
     GetVideo,
     UpdateGroup,
+    UpdateGroupAvatar,
     UploadBinaryComment,
     UploadBinaryPost,
     UploadNonBinaryComment,
