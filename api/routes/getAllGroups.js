@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const { GroupModel } = require('../../db/models');
 
-router.route('/api/get-groups').get(async (req, res) => {
+router.route('/api/get-all-groups').get(async (req, res) => {
     try {
         const groups = await GroupModel.find({});
         res.status(200).json({ isError: false, groups });
