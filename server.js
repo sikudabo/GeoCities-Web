@@ -16,6 +16,7 @@ const {
     DeleteBinaryPost,
     DeleteNonBinaryComment,
     DeleteNonBinaryPost,
+    FollowUnfollowUser,
     GetAllGroups,
     GetAllUsers,
     GetAvatarByGroupName,
@@ -59,6 +60,7 @@ app.use(DeleteBinaryComment);
 app.use(DeleteBinaryPost);
 app.use(DeleteNonBinaryComment);
 app.use(DeleteNonBinaryPost);
+app.use(FollowUnfollowUser);
 app.use(GetAllUsers);
 app.use(GetFeedPosts);
 app.use(GetAllGroups);

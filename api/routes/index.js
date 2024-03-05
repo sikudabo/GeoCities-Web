@@ -6,6 +6,7 @@ const DeleteBinaryComment = require('./deleteBinaryComment');
 const DeleteBinaryPost = require('./deleteBinaryPost');
 const DeleteNonBinaryComment = require('./deleteNonBinaryComment');
 const DeleteNonBinaryPost = require('./deleteNonBinaryPost');
+const FollowUnfollowUser = require('./followUnfollowUser');
 const GetAllGroups = require('./getAllGroups');
 const GetAllUsers = require('./getAllUsers');
 const GetAvatarByGroupName = require('./getAvatarByGroupName');
@@ -38,6 +39,7 @@ module.exports = {
     DeleteBinaryPost,
     DeleteNonBinaryComment,
     DeleteNonBinaryPost,
+    FollowUnfollowUser,
     GetAllGroups,
     GetAllUsers,
     GetAvatarByGroupName,
