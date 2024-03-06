@@ -3,7 +3,7 @@ const router = express.Router();
 const { UserModel } = require('../../db/models');
 
 router.route('/api/update-user').post(async (req, res) => {
-    const { _id, blockList, email, locationCity, locationState } = req.body;
+    const { _id, blockList, email, isBlocking, isUnblocking, locationCity, locationState, userId } = req.body;
 
     try {
         const emailTaken = await UserModel.findOne({ _id: { $ne: _id }, email });
@@ -12,6 +12,11 @@ router.route('/api/update-user').post(async (req, res) => {
             return;
         }
         await UserModel.updateOne({ _id }, { blockList, email, locationCity, locationState });
+        if (isBlocking) {
+            await UserModel.updateOne({ _id: userId }, { $push: { blockedFrom: _id }});
+        } else if (isUnblocking) {
+            await UserModel.updateOne({ _id: userId }, { $pull: { blockedFrom: _id }});
+        }
         const updatedUser = await UserModel.findOne({ _id });
         res.status(200).json({ isError: false, message: 'Successfully updated profile.', updatedUser });
         return;
