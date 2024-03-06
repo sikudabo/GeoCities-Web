@@ -26,6 +26,7 @@ const GetVideo = require('./getVideo');
 const JoinGroup = require('./joinGroup');
 const UpdateGroup = require('./updateGroup');
 const UpdateGroupAvatar = require('./updateGroupAvatar');
+const UpdateUser = require('./updateUser');
 const UploadBinaryComment = require('./uploadBinaryComment');
 const UploadBinaryPost = require('./uploadBinaryPost');
 const UploadNonBinaryComment = require('./uploadNonBinaryComment');
@@ -62,6 +63,7 @@ module.exports = {
     JoinGroup,
     UpdateGroup,
     UpdateGroupAvatar,
+    UpdateUser,
     UploadBinaryComment,
     UploadBinaryPost,
     UploadNonBinaryComment,
