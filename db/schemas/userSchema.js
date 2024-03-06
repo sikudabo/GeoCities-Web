@@ -19,6 +19,8 @@ const userSchema = mongoose.Schema({
     // fbId: { required: true, type: String, unique: true },
     blockedFrom: { default: [], type: [String] },
     groups: { default: [], type: [String] },
+    events: { default: [], type: [String] },
+    eventsAttendings: { default: [], type: [String] },
 }, {
     collection: 'users',
 });
