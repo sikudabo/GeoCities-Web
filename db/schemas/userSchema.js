@@ -21,6 +21,7 @@ const userSchema = mongoose.Schema({
     groups: { default: [], type: [String] },
     events: { default: [], type: [String] },
     eventsAttendings: { default: [], type: [String] },
+    description: { default: '', type: String },
 }, {
     collection: 'users',
 });
