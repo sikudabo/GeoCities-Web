@@ -11,7 +11,8 @@ const GetAllGroups = require('./getAllGroups');
 const GetAllUsers = require('./getAllUsers');
 const GetAvatarByGroupName = require('./getAvatarByGroupName');
 const GetFeedPosts = require('./getFeedPosts');
-const GetFollowersFollowing = require('./getFollowersFollowing');
+const GetFollowers = require('./getFollowers');
+const GetFollowing = require('./getFollowing');
 const GetGroup = require('./getGroup');
 const GetGroupPosts = require('./getGroupPosts');
 const GetGroups = require('./getGroups');
@@ -45,7 +46,8 @@ module.exports = {
     GetAllUsers,
     GetAvatarByGroupName,
     GetFeedPosts,
-    GetFollowersFollowing,
+    GetFollowers,
+    GetFollowing,
     GetGroup,
     GetGroupPosts,
     GetGroups,

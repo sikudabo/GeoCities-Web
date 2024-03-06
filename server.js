@@ -21,7 +21,8 @@ const {
     GetAllUsers,
     GetAvatarByGroupName,
     GetFeedPosts,
-    GetFollowersFollowing,
+    GetFollowers,
+    GetFollowing,
     GetGroup,
     GetGroupPosts,
     GetGroups,
@@ -64,7 +65,8 @@ app.use(DeleteNonBinaryPost);
 app.use(FollowUnfollowUser);
 app.use(GetAllUsers);
 app.use(GetFeedPosts);
-app.use(GetFollowersFollowing);
+app.use(GetFollowers);
+app.use(GetFollowing);
 app.use(GetAllGroups);
 app.use(GetAvatarByGroupName);
 app.use(GetGroup);
