@@ -6,8 +6,8 @@ router.route('/api/get-blocked-users/:_id').get(async (req, res) => {
     const { _id } = req.params;
     
     try {
-        const { blockList } = await UserModel.findOne({ _id });
-        const blockedUsers = await UserModel.find({ _id: { $in: blockList }}, { _id: 1, avatar: 1, firstName: 1, lastName: 1 });
+        const { blockedList } = await UserModel.findOne({ _id });
+        const blockedUsers = await UserModel.find({ _id: { $in: blockedList }}, { _id: 1, avatar: 1, firstName: 1, lastName: 1 });
         res.status(200).json({ isError: false, message: 'Fetched blocked users', blockedUsers });
         return;
     } catch(err) {
