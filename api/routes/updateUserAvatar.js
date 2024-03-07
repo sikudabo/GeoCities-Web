@@ -41,16 +41,16 @@ const storage = new GridFsStorage({
 const uploads = multer({ storage });
 
 router.route('/api/change-user-avatar/:_id/:avatarId').post(uploads.single('avatar'), async (req, res) => {
-    const { _id, avatarId } = req.params;
+    const { _id: userId, avatarId } = req.params;
     const filename = req.file.filename;
 
     try {
-        await UserModel.updateOne({ _id }, { $set: { avatar: filename }});
+        await UserModel.updateOne({ _id: userId }, { $set: { avatar: filename }});
 
         if (avatarId) {
             const { _id } = await gfs.files.findOne({ filename: avatarId });
             await gridfsBucket.delete(_id);
-            const updatedUser = await UserModel.findOne({ _id });
+            const updatedUser = await UserModel.findOne({ _id: userId });
             res.status(200).json({ isError: false, message: 'Successfully updated avatar.', updatedUser });
         }
     } catch(err) {
