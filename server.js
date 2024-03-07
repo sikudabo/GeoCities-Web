@@ -11,6 +11,7 @@ const {
     AddOrRemoveGroupUser,
     AddSubtractCommentLike,
     AddSubtractLike,
+    CreateEvent,
     CreateGroup,
     DeleteBinaryComment,
     DeleteBinaryPost,
@@ -60,6 +61,7 @@ app.use(cors());
 app.use(AddOrRemoveGroupUser);
 app.use(AddSubtractCommentLike);
 app.use(AddSubtractLike);
+app.use(CreateEvent);
 app.use(CreateGroup);
 app.use(DeleteBinaryComment);
 app.use(DeleteBinaryPost);
