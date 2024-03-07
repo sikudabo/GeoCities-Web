@@ -6,6 +6,7 @@ const eventSchema = new mongoose.Schema({
     avatar: { required: true, type: String },
     createdAt: { required: true, type: Number },
     description: { required: true, type: String },
+    eventAddress: { required: true, type: String },
     eventCity: { required: true, type: String },
     eventDate: { required: true, type: Number },
     eventState: { required: true, type: String },
