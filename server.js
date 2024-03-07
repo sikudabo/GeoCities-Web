@@ -39,6 +39,7 @@ const {
     UpdateGroup,
     UpdateGroupAvatar,
     UpdateUser,
+    UpdateUserAvatar,
     UploadNonBinaryComment,
     UploadNonBinaryPost,
     UserLogin,
@@ -89,6 +90,7 @@ app.use(UploadNonBinaryPost);
 app.use(UpdateGroup);
 app.use(UpdateGroupAvatar);
 app.use(UpdateUser);
+app.use(UpdateUserAvatar);
 app.use(UserLogin);
 app.use(UserSignUp);
 

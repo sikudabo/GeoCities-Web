@@ -27,6 +27,7 @@ const JoinGroup = require('./joinGroup');
 const UpdateGroup = require('./updateGroup');
 const UpdateGroupAvatar = require('./updateGroupAvatar');
 const UpdateUser = require('./updateUser');
+const UpdateUserAvatar = require('./updateUserAvatar');
 const UploadBinaryComment = require('./uploadBinaryComment');
 const UploadBinaryPost = require('./uploadBinaryPost');
 const UploadNonBinaryComment = require('./uploadNonBinaryComment');
@@ -64,6 +65,7 @@ module.exports = {
     UpdateGroup,
     UpdateGroupAvatar,
     UpdateUser,
+    UpdateUserAvatar,
     UploadBinaryComment,
     UploadBinaryPost,
     UploadNonBinaryComment,
