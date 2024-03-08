@@ -11,6 +11,8 @@ const groupSchema = new mongoose.Schema({
     members: { default: [], type: [String] },
     blockList: { default: [], type: [String] },
     rules: { default: [], type: [String] },
+}, {
+    collection: 'groups',
 });
 
 module.exports = groupSchema;
