@@ -36,6 +36,7 @@ const {
     GetPhoto,
     GetPhotoByUserId,
     GetPost,
+    GetPostsByHashtag,
     GetProfilePosts,
     GetUser,
     GetUserEvents,
@@ -88,6 +89,7 @@ app.use(GetAllGroups);
 app.use(GetAvatarByGroupName);
 app.use(GetGroup);
 app.use(GetGroupPosts);
+app.use(GetPostsByHashtag);
 app.use(GetGroups);
 app.use(GetPhoto);
 app.use(GetPhotoByUserId);

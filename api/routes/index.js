@@ -26,6 +26,7 @@ const GetGroups = require('./getGroups');
 const GetPhoto = require('./getPhoto')
 const GetPhotoByUserId = require('./getPhotoByUserId');
 const GetPost = require('./getPost');
+const GetPostsByHashtag = require('./getPostsByHashtag');
 const GetProfilePosts = require('./getProfilePosts');
 const GetUser = require('./getUser');
 const GetUserEvents = require('./getUserEvents');
@@ -71,6 +72,7 @@ module.exports = {
     GetPhoto,
     GetPhotoByUserId,
     GetPost,
+    GetPostsByHashtag,
     GetProfilePosts,
     GetUser,
     GetUserEvents,
