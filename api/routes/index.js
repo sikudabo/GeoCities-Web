@@ -12,6 +12,7 @@ const GetAllEvents = require('./getAllEvents');
 const GetAllGroups = require('./getAllGroups');
 const GetAllUsers = require('./getAllUsers');
 const GetAvatarByGroupName = require('./getAvatarByGroupName');
+const GetAvatarByUserId = require('./getAvatarByUserId');
 const GetBlockedUsers = require('./getBlockedUsers');
 const GetFeedPosts = require('./getFeedPosts');
 const GetFollowers = require('./getFollowers');
@@ -52,6 +53,7 @@ module.exports = {
     GetAllGroups,
     GetAllUsers,
     GetAvatarByGroupName,
+    GetAvatarByUserId,
     GetBlockedUsers,
     GetFeedPosts,
     GetFollowers,
