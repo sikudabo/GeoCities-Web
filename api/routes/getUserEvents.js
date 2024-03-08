@@ -1,17 +1,13 @@
 const express = require('express');
 const router = express.Router();
-const { EventsModel, UserModel } = require('../../db/models');
+const { EventModel, UserModel } = require('../../db/models');
 
 router.route('/api/get-user-events/:_id').get(async (req, res) => {
     const { _id } = req.params;
 
     try {
         const { eventsAttending } = await UserModel.findOne({ _id });
-        if (!fetchedUser) {
-            res.status(200).json({ isError: true, message: 'User not found!' });
-            return;
-        }
-        const events = await EventsModel.find({ _id : { $in: eventsAttending } }).sort({ eventDate: 1 });
+        const events = await EventModel.find({ _id : { $in: eventsAttending } }).sort({ eventDate: 1 });
         res.status(200).json({ isError: false, message: 'Successfully fetched events.', events });
         return;
     } catch (err) {
