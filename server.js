@@ -38,6 +38,7 @@ const {
     GetPost,
     GetProfilePosts,
     GetUser,
+    GetUserEvents,
     GetVideo,
     JoinGroup,
     UploadBinaryComment,
@@ -93,6 +94,7 @@ app.use(GetPhotoByUserId);
 app.use(GetPost);
 app.use(GetProfilePosts);
 app.use(GetUser);
+app.use(GetUserEvents);
 app.use(GetVideo);
 app.use(JoinGroup);
 app.use(UploadBinaryComment);

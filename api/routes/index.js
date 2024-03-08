@@ -28,6 +28,7 @@ const GetPhotoByUserId = require('./getPhotoByUserId');
 const GetPost = require('./getPost');
 const GetProfilePosts = require('./getProfilePosts');
 const GetUser = require('./getUser');
+const GetUserEvents = require('./getUserEvents');
 const GetVideo = require('./getVideo');
 const JoinGroup = require('./joinGroup');
 const UpdateGroup = require('./updateGroup');
@@ -72,6 +73,7 @@ module.exports = {
     GetPost,
     GetProfilePosts,
     GetUser,
+    GetUserEvents,
     GetVideo,
     JoinGroup,
     UpdateGroup,
