@@ -20,7 +20,7 @@ const userSchema = mongoose.Schema({
     blockedFrom: { default: [], type: [String] },
     groups: { default: [], type: [String] },
     events: { default: [], type: [String] },
-    eventsAttendings: { default: [], type: [String] },
+    eventsAttending: { default: [], type: [String] },
     description: { default: '', type: String },
 }, {
     collection: 'users',

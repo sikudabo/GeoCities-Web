@@ -6,6 +6,7 @@ const CreateEvent = require('./createEvent');
 const CreateGroup = require('./createGroup');
 const DeleteBinaryComment = require('./deleteBinaryComment');
 const DeleteBinaryPost = require('./deleteBinaryPost');
+const DeleteEvent = require('./deleteEvent');
 const DeleteNonBinaryComment = require('./deleteNonBinaryComment');
 const DeleteNonBinaryPost = require('./deleteNonBinaryPost');
 const FetchEventAttendingUsers = require('./fetchEventAttendingUsers');
@@ -49,6 +50,7 @@ module.exports = {
     CreateGroup,
     DeleteBinaryComment,
     DeleteBinaryPost,
+    DeleteEvent,
     DeleteNonBinaryComment,
     DeleteNonBinaryPost,
     FetchEventAttendingUsers,

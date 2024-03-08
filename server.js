@@ -16,6 +16,7 @@ const {
     CreateGroup,
     DeleteBinaryComment,
     DeleteBinaryPost,
+    DeleteEvent,
     DeleteNonBinaryComment,
     DeleteNonBinaryPost,
     FetchEventAttendingUsers,
@@ -70,6 +71,7 @@ app.use(CreateEvent);
 app.use(CreateGroup);
 app.use(DeleteBinaryComment);
 app.use(DeleteBinaryPost);
+app.use(DeleteEvent);
 app.use(DeleteNonBinaryComment);
 app.use(DeleteNonBinaryPost);
 app.use(FetchEventAttendingUsers);
