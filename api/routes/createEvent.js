@@ -54,6 +54,7 @@ router.route('/api/create-event').put(uploads.single('avatar'), async (req, res)
     try {
         const newEvent = new EventModel({
             authorId,
+            attendees: [authorId],
             avatar,
             createdAt: Number(createdAt),
             description,
