@@ -68,7 +68,7 @@ router.route('/api/create-event').put(uploads.single('avatar'), async (req, res)
 
         const event = await newEvent.save();
         const { _id } = event;
-        await UserModel.updateOne({ _id: authorId }, { $push: { events: _id }});
+        await UserModel.updateOne({ _id: authorId }, { $push: { events: _id, eventsAttending: _id }});
         const updatedUser = await UserModel.findOne({ _id: authorId });
         res.status(200).json({ isError: false, message: 'Successfully created event', updatedUser });
         return;
