@@ -1,6 +1,7 @@
 const AddOrRemoveGroupUser = require('./addOrRemoveGroupUser');
 const AddSubtractCommentLike = require('./addSubtractCommentLike');
 const AddSubtractLike = require('./addSubtractLike');
+const AttendEvent = require('./attendEvent');
 const CreateEvent = require('./createEvent');
 const CreateGroup = require('./createGroup');
 const DeleteBinaryComment = require('./deleteBinaryComment');
@@ -43,6 +44,7 @@ module.exports = {
     AddOrRemoveGroupUser,
     AddSubtractCommentLike,
     AddSubtractLike,
+    AttendEvent,
     CreateEvent,
     CreateGroup,
     DeleteBinaryComment,
