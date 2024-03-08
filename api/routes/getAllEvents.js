@@ -7,7 +7,7 @@ router.route('/api/get-all-events/:_id').get(async (req, res) => {
 
     try {
         const { blockedFrom } = await UserModel.findOne({ _id });
-        const events = await EventModel.find({ authorId: { $nin: blockedFrom }});
+        const events = await EventModel.find({ authorId: { $nin: blockedFrom }}).sort({ eventDate: 1 });
         res.status(200).json({ isError: false, message: 'Successfully fetched events.', events });
         return;
     } catch (err) {
