@@ -7,7 +7,7 @@ router.route('/api/fetch-event-attending-users/:eventId').get(async (req, res) =
     
     try {
         const { attendees } = await EventModel.findOne({ _id });
-        const usersAttending = await UserModel.find({ _id: { $in: attendees }}, { avatar: 1, firstName: 1, followers: 1, _id: 1, lastName: 1 });
+        const usersAttending = await UserModel.find({ _id: { $in: attendees }}, { avatar: 1, dob: 1, firstName: 1, followers: 1, _id: 1, lastName: 1, locationCity: 1, locationState: 1, });
         res.status(200).json({ users: usersAttending, isError: false, message: 'Successfully retrieved attendees.' });
         return;
     } catch (err) {
