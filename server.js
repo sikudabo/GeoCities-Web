@@ -6,6 +6,10 @@ const bodyParser = require('body-parser');
 const logger = require('morgan');
 const errorHandler = require('errorhandler');
 const cors = require('cors');
+const path = require('path');
+const serveStatic = require('serve-static');
+const history = require('connect-history-api-fallback');
+const sslRedirect = require('heroku-ssl-redirect');
 const { startDb } = require('./db');
 const {
     AddOrRemoveGroupUser,
@@ -63,6 +67,17 @@ app.use(errorHandler());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
+app.use(sslRedirect.default());
+app.use(history({
+    rewrites: [
+        {
+            from: /^\/api\/.*$/,
+            to: function(context) {
+                return context.parsedUrl.path;
+            }
+        }
+    ]
+}));
 
 // Routes 
 app.use(AddOrRemoveGroupUser);
@@ -110,8 +125,14 @@ app.use(UpdateUserAvatar);
 app.use(UserLogin);
 app.use(UserSignUp);
 
+app.use(serveStatic(path.join(__dirname, 'build')));
+
 // Create database connection
 startDb();
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
 
 // Create the server 
 const server = http.createServer(app);
