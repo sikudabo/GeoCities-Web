@@ -4,7 +4,7 @@ const Grid = require('gridfs-stream');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv').config();
 
-const dbUri = dotenv.parsed.DB_URI;
+const dbUri = process.env.DB_URI;
 
 var conn = mongoose.createConnection(dbUri, {useNewUrlParser: true, useUnifiedTopology: true});
 mongoose.connect(dbUri, {useNewUrlParser: true, useUnifiedTopology: true});

@@ -8,7 +8,7 @@ const path = require('path');
 const { PostModel } = require('../../db/models');
 const dotenv = require('dotenv').config();
 
-const dbUri = dotenv.parsed.DB_URI;
+const dbUri = process.env.DB_URI;
 
 
 var conn = mongoose.createConnection(dbUri, { useNewUrlParser: true, useUnifiedTopology: true });
