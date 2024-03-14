@@ -41,7 +41,6 @@ const storage = new GridFsStorage({
 const uploads = multer({ storage });
 
 router.route('/api/change-user-avatar/:_id/:avatarId').post(uploads.single('avatar'), async (req, res) => {
-    console.log('I am being hit to change an avatar');
     const { _id: userId, avatarId } = req.params;
     const filename = req.file.filename;
 
